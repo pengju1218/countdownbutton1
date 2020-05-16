@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TonieApp.iml" filepath="$PROJECT_DIR$/TonieApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../httpnet/httpnet.iml" filepath="$PROJECT_DIR$/../httpnet/httpnet.iml" />
+    </modules>
+  </component>
+</project>

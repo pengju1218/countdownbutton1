@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Tab效果</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<SCRIPT src="js/jquery-1.10.2.js"></SCRIPT>
+
+		<SCRIPT src="js/swiper-3.4.0.jquery.min.js" type="text/javascript"></SCRIPT>
+		<LINK href="css/swiper-3.2.7.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<style>
+			body {
+				margin: 0 auto;
+				color: #333;
+				padding: 0;
+				font-family: "Microsoft Yahei";
+				text-align: center;
+			}
+			
+			.container {
+				/*width: 100%;*/
+				border: 1px solid #ccc;
+			}
+			
+			.swiper1 {
+				color: black;
+				width: 100%;
+			}
+			
+			.swiper1 .selected {
+				color: #ec5566;
+				border-bottom: 1px solid #ec5566;
+			}
+			
+			.swiper1 .swiper-slide {
+				font-family: kaiti;
+				text-align: center;
+				font-size: 0.82rem;
+				height: auto;
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				cursor: pointer;
+				padding-bottom: 0.4rem;
+				padding-top: 0.4rem;
+			}
+			
+			.swiper2 {
+				width: 100%;
+			}
+			
+			.swiper2 .swiper-slide {
+				height: calc(100vh - 90px);
+				background-color: #ccc;
+				color: #fff;
+				
+				text-align: center;
+				box-sizing: border-box !important;
+				overflow-x: hidden !important;
+			
+			}
+		 .mui-table-view-cell{
+		 	color: purple;
+		 	text-align: left;
+		 }
+		</style>
+	</head>
+
+	<body>
+
+		<BODY>
+			<header class="mui-bar mui-bar-nav">
+				<a tapmode onclick="closeWin()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">K线</h1>
+			</header>
+			<script type="application/javascript">
+				function closeWin() {
+					window.location.href = "../index.html";
+					//history.go(-1);
+
+					api.closeWin({});
+				}
+			</script>
+			<div class="mui-content">
+
+				<div class="swiper-container swiper1">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide selected">操作</div>
+						
+						
+						
+						<div class="swiper-slide ">形态</div>
+						<div class="swiper-slide ">技巧</div>
+						<div class="swiper-slide ">卖出</div>
+					</div>
+				</div>
+				<div class="swiper-container swiper2">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+					
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<m>1</m>.不可逆市买卖，时势不明朗时，宁可袖手旁观。 
+								</li>
+								<li class="mui-table-view-cell">
+									<m>2</m>.发现错误时应当及时平仓。 
+								</li>
+								<li class="mui-table-view-cell">
+									<m>3</m>.犹豫不决，不宜入市。
+								</li>
+								<li class="mui-table-view-cell">
+									<m>4</m>.买卖次数不宜过于频繁。
+								</li>
+								<li class="mui-table-view-cell">
+									<m>5</m>.买卖得心应手时，请不要随意增加筹码。 
+								</li>
+								<li class="mui-table-view-cell">
+									<m>6</m>.不可轻信他人意见，即使是专家的意见也不轻信。 
+								</li>
+								<li class="mui-table-view-cell">
+									<m>7</m>.不受市场的气氛左右和困扰，要坚持自己的原则。 
+								</li>
+								<li class="mui-table-view-cell">
+									<m>8</m>.任何时候都不要满仓操作，更不要透支。 
+								</li>
+								<li class="mui-table-view-cell">
+									<m>9</m>.大盘明显的大阴大阳选股跟随大盘。 
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>10</m>.大盘高位不交易。 
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>11</m>.大盘分时下跌不交易。 
+								</li>
+								<li class="mui-table-view-cell">
+									<m>12</m>.股票买出，上午一直在均线下方的上午卖出，其它在红柱多次出现冲高卖出。 
+								</li>
+							</ul>
+								
+						</div>
+						
+						<div class="swiper-slide">
+						<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<k>阳线</k>
+								</li>
+								<li class="mui-table-view-cell">
+									<m>1</m>.先控盘再上突（亚振家居<m>20181107</m>）
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>2</m>.双上突小下探，阳倒锤子（北大医药<m>20181107</m>）
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>3</m>.小上探无下探，两平行线之间运行（空港股份<m>20181108</m>,时代出版<m>20181109</m>）
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>4</m>.开盘小下，全程上（索菱股份<m>20181121</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>5</m>.小平降，全程上（众业达<m>20181121</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>6</m>.前方上突，中小下，后上拉（国立科技<m>20181128</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>7</m>.高开低走，前半场在均线下方，后半场在均线上方（振江股份<m>20181102</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>8</m>.开盘下探然后慢慢的收盘小上探（柯利达<m>20181128</m>）
+								</li>
+								
+								
+								
+								<li class="mui-table-view-cell">
+									<k>阴线</k>
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>1</m>.两平行线之间运行，小上下影（深冷股份<m>20181107</m>,优德精密<m>20181108</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>2</m>.前面和中间有上突迹象（启迪古汉<m>20181107</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>3</m>.前面有上突，后小下探然后贴底运行迹象（同济科技<m>20181107</m>）
+								</li>
+                                <li class="mui-table-view-cell">
+									<m>4</m>.一直有上探无下探（凯瑞德<m>20181107</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>5</m>.先控盘再小下探（瑞斯康达<m>20181108</m>）
+								</li>
+								
+                                <li class="mui-table-view-cell">
+									<m>6</m>.小上探然后贴顶运行，最后极小下探小上影无下影（金安国纪<m>20181109</m>）
+								</li>
+								
+								 <li class="mui-table-view-cell">
+									<m>7</m>.开盘上探尾盘下探（罗普斯金<m>20181120</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>8</m>.开盘上探然后慢慢的一直下探（新力金融<m>20181120</m>，邦宝益智<m>20181129</m>）
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>9</m>.开盘下探然后慢慢的收盘靠近顶部（新开源<m>20181128</m>）
+								</li>
+								
+								<li class="mui-table-view-cell">
+									<m>10</m>.长平下中间有三次上突（海峡股份<m>20181127</m>）
+								</li>
+						  </ul>
+						</div>
+						
+						<div class="swiper-slide">
+						<ul class="mui-table-view">
+								
+								<li class="mui-table-view-cell">
+									<m>1</m>.上午拉升强于下午。（歌华有线<m>20181127</m>，贵广网络<m>20181127</m>）
+								</li>
+								
+								
+								<li class="mui-table-view-cell">
+									<m>2</m>.一次性冲高维持在高位示跌。（泰瑞机器<m>20181128</m>）
+								</li>
+								
+								
+								
+								<li class="mui-table-view-cell">
+									<m>3</m>.缓跌看红线就知道。（邦宝益智<m>20181129</m>）
+								</li>
+								
+								
+								<li class="mui-table-view-cell">
+									<m>4</m>.倒锤子上升明险短降缓。（华铁股份<m>20181212</m>）
+								</li>
+								<li class="mui-table-view-cell">
+									<m>5</m>.大盘下降不交易。
+								</li>
+								
+								
+								
+						  </ul>
+						</div>
+						
+						
+						
+						<div class="swiper-slide">
+						<ul class="mui-table-view">
+								
+						<li class="mui-table-view-cell">
+							<m>1</m>.分时开盘在均线下方，11点如果没有上穿卖出，如果上穿不卖。
+						</li>
+								
+						<li class="mui-table-view-cell">
+							<m>2</m>.现价确认线的同折明显。
+						</li>
+						
+					   <li class="mui-table-view-cell">
+							<m>3</m>.顶部大阴不交易。
+					    </li>
+								
+								
+								
+								
+						  </ul>
+						</div>
+						
+						
+						
+						
+					</div>
+				</div>
+
+				</div>
+			</div>
+			<SCRIPT>
+				$(function() {
+					function setCurrentSlide(ele, index) {
+						$(".swiper1 .swiper-slide").removeClass("selected");
+						ele.addClass("selected");
+						//swiper1.initialSlide=index;
+					}
+
+					var swiper1 = new Swiper('.swiper1', {
+						//					设置slider容器能够同时显示的slides数量(carousel模式)。
+						//					可以设置为number或者 'auto'则自动根据slides的宽度来设定数量。
+						//					loop模式下如果设置为'auto'还需要设置另外一个参数loopedSlides。
+						slidesPerView: 5.5,
+						paginationClickable: true, //此参数设置为true时，点击分页器的指示点分页器会控制Swiper切换。
+						spaceBetween: 10, //slide之间的距离（单位px）。
+						freeMode: true, //默认为false，普通模式：slide滑动时只滑动一格，并自动贴合wrapper，设置为true则变为free模式，slide会根据惯性滑动且不会贴合。
+						loop: false, //是否可循环
+						onTab: function(swiper) {
+							var n = swiper1.clickedIndex;
+						}
+					});
+					swiper1.slides.each(function(index, val) {
+						var ele = $(this);
+						ele.on("click", function() {
+							setCurrentSlide(ele, index);
+							swiper2.slideTo(index, 500, false);
+							//mySwiper.initialSlide=index;
+						});
+					});
+
+					var swiper2 = new Swiper('.swiper2', {
+						//freeModeSticky  设置为true 滑动会自动贴合  
+						direction: 'horizontal', //Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)。
+						loop: false,
+						//					effect : 'fade',//淡入
+						//effect : 'cube',//方块
+						//effect : 'coverflow',//3D流
+						//					effect : 'flip',//3D翻转
+						autoHeight: true, //自动高度。设置为true时，wrapper和container会随着当前slide的高度而发生变化。
+						onSlideChangeEnd: function(swiper) { //回调函数，swiper从一个slide过渡到另一个slide结束时执行。
+							var n = swiper.activeIndex;
+							setCurrentSlide($(".swiper1 .swiper-slide").eq(n), n);
+							swiper1.slideTo(n, 500, false);
+						}
+					});
+				});
+			</SCRIPT>
+		</BODY>
+	</body>
+
+</html>

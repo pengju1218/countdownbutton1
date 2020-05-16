@@ -1,0 +1,171 @@
+zc
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a tapmode onclick="closeWin()" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">K线图片相册版本</h1>
+		</header>
+
+		<script type="application/javascript">
+			function closeWin() {
+				window.location.href = "../index.html";
+				//history.go(-1);
+
+				api.closeWin({});
+			}
+		</script>
+
+		<div class="mui-content">
+
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					<a href="list2/album01.html" class="mui-navigate-right"><m>01.</m>底部向下的</a>
+				</li>
+<!--
+				<li class="mui-table-view-cell">
+					<a href="list2/album02.html" class="mui-navigate-right"><m>02.</m>3均上下走</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album03.html" class="mui-navigate-right"><m>03.</m>3均下上走</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album04.html" class="mui-navigate-right"><m>04.</m>3均下下走</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album05.html" class="mui-navigate-right"><m>05.</m>3均下小拐</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album06.html" class="mui-navigate-right"><m>06.</m>上穿</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album07.html" class="mui-navigate-right"><m>07.</m>下穿</a>
+				</li>-->
+
+				<!--<li class="mui-table-view-cell">
+					<a href="list2/album08.html" class="mui-navigate-right"><m>08.</m>上绿白V下</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album09.html" class="mui-navigate-right"><m>09.</m>上绿白上</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album10.html" class="mui-navigate-right"><m>10.</m>上长白</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album11.html" class="mui-navigate-right"><m>11.</m>上长红</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album12.html" class="mui-navigate-right"><m>12.</m>上长黄</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a href="list2/album13.html" class="mui-navigate-right"><m>13.</m>上长绿</a>
+				</li>
+	            <li class="mui-table-view-cell">
+					<a href="list2/album14.html" class="mui-navigate-right"><m>14.</m>下白红上</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="list2/album15.html" class="mui-navigate-right"><m>15.</m>下白绿下 </a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="list2/album16.html" class="mui-navigate-right"><m>16.</m>下红白下 </a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="list2/album17.html" class="mui-navigate-right"><m>17.</m>下绿白V下</a>
+				</li>
+				
+				<li class="mui-table-view-cell">
+					<a href="list2/album18.html" class="mui-navigate-right"><m>18.</m>下绿白上</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="list2/album19.html" class="mui-navigate-right"><m>19.</m>下长白</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="list2/album20.html" class="mui-navigate-right"><m>20.</m>下长红</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="list2/album21.html" class="mui-navigate-right"><m>21.</m>下长绿</a>
+				</li>-->
+				
+			</ul>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.pullToRefresh.js"></script>
+		<script src="js/mui.pullToRefresh.material.js"></script>
+		<script>
+			mui.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				$.ready(function() {
+					//循环初始化所有下拉刷新，上拉加载。
+					/*$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
+										self.endPullDownToRefresh();
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										ul.appendChild(createFragment(ul, index, 5));
+										self.endPullUpToRefresh();
+									}, 1000);
+								}
+							}
+						});
+					});*/
+					var createFragment = function(ul, index, count, reverse) {
+						var length = ul.querySelectorAll('li').length;
+						var fragment = document.createDocumentFragment();
+						var li;
+						for(var i = 0; i < count; i++) {
+							li = document.createElement('li');
+							li.className = 'mui-table-view-cell';
+							li.innerHTML = '第' + (index + 1) + '个选项卡子项-' + (length + (reverse ? (count - i) : (i + 1)));
+							fragment.appendChild(li);
+						}
+						return fragment;
+					};
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>
